@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vmpdaymmk-nodejs-gitops
+  description: This is GitOps manifest for vmpdaymmk-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vmpdaymmk-nodejs
+    backstage.io/kubernetes-id: vmpdaymmk-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vmpdaymmk-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vmpdaymmk-nodejs
